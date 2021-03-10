@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>订单中心</title>
+    <link
+      rel="stylesheet"
+      href="./static/css/weui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./static/css/jquery-weui.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <link rel="stylesheet" href="./static/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./static/css/order.css" />
+  </head>
+  <body style="background-color: #f7f6f9; min-height: 100vh">
+    <div class="wrapper">
+      <!-- 订单状态 -->
+      <!-- 订单状态 -- 待发货（有图标 加 status-narrow的类名） -->
+      <div class="status status-narrow">
+        <div class="address__figure">
+          <i class="fy-icon fy-icon-order-to-pay"></i>
+        </div>
+        <div class="status__detail">
+          <div class="status__info">
+            <i type="order" size="46" color="#222"></i>
+            待发货
+          </div>
+          <div class="status__tips"></div>
+        </div>
+      </div>
+      <!-- 地址 -->
+      <div class="address">
+        <div class="address__figure">
+          <i class="fy-icon fy-icon-location"></i>
+        </div>
+        <div class="address__detail">
+          <div class="address__title">
+            <span class="address__name">飞飞</span>
+            <span class="address__tel">156****1192</span>
+          </div>
+          <div class="address__info">北京北京市延庆县门派100</div>
+        </div>
+        <div class="address__handle">
+          <i
+            class="fy-icon fy-icon-clipboard copy_address"
+            data-clipboard-text="飞飞 156****1192
+    北京北京市延庆县门派100"
+          ></i>
+        </div>
+      </div>
+      <!-- 商品卡片 -->
+      <div class="order">
+        <div class="order__list">
+          <div class="order__item pdt">
+            <div class="order__bd">
+              <div class="card">
+                <div class="card__figure" id="card_img">
+                  <img
+                    class="card__img"
+                    src="https://p1.qpic.cn/fengye/0/apd_1600803995f6ae228532ce/0?300*300"
+                  />
+                </div>
+                <div class="card__detail">
+                  <div class="card__title" id="card_title">
+                    【酒厂直销】正宗茅台镇老坛53°酱香型坤沙白酒！厂家直供！最后100箱！
+                  </div>
+                  <div class="card__remark"></div>
+                </div>
+                <div class="card__addon">
+                  <div class="card__price">￥ 198.00</div>
+                  <div class="card__count">x 1</div>
+                </div>
+              </div>
+              <div class="card__ft">
+                <a
+                  href="tel:400-xxx-xxxx"
+                  class="fy-btn ghost"
+                  id="apply_aftersale_btn"
+                >
+                  申请售后
+                </a>
+              </div>
+            </div>
+            <div class="order__more">
+              <div class="fy-form justify">
+                <div class="fy-form__item">
+                  <div class="fy-form__label">备注</div>
+                  <div class="fy-form__content"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__item pdt">
+            <div class="order__bd">
+              <div class="card">
+                <div class="card__figure" id="card_img">
+                  <img
+                    class="card__img"
+                    src="https://p1.qpic.cn/fengye/0/apd_1600803995f6ae228532ce/0?300*300"
+                  />
+                </div>
+                <div class="card__detail">
+                  <div class="card__title" id="card_title">
+                    【酒厂直销】正宗茅台镇老坛53°酱香型坤沙白酒！厂家直供！最后100箱！
+                  </div>
+                  <div class="card__remark"></div>
+                </div>
+                <div class="card__addon">
+                  <div class="card__price">￥ 198.00</div>
+                  <div class="card__count">x 1</div>
+                </div>
+              </div>
+              <div class="card__ft">
+                <a
+                  href="tel:400-xxx-xxxx"
+                  class="fy-btn ghost"
+                  id="apply_aftersale_btn"
+                >
+                  申请售后
+                </a>
+              </div>
+            </div>
+            <div class="order__more">
+              <div class="fy-form justify">
+                <div class="fy-form__item">
+                  <div class="fy-form__label">备注</div>
+                  <div class="fy-form__content"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品信息汇总 -->
+      <div class="summary">
+        <div class="summary__bd">
+          <div class="fy-form justify">
+            <div class="fy-form__item">
+              <div class="fy-form__label">套餐金额</div>
+              <div class="fy-form__content">￥ 198.00</div>
+            </div>
+            <div class="fy-form__item">
+              <div class="fy-form__label">套餐数量</div>
+              <div class="fy-form__content">1</div>
+            </div>
+          </div>
+        </div>
+        <div class="summary__ft">
+          货到支付：
+          <span class="summary__price">￥198.00</span>
+        </div>
+      </div>
+      <!-- 下单相关详细信息 -->
+      <div class="order__bottom order__fix">
+        <div class="order__handle">
+          <div
+            class="order__btn fy-btn ghost"
+            id="buy_more_btn"
+            data-step="waitting_sure"
+          >
+            重新下单
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./static/js/zepto.min.js"></script>
+    <script src="./static/js/jquery-weui.min.js"></script>
+    <script src="./static/js/swiper-bundle.min.js"></script>
+    <script src="./static/js/city-picker.min.js"></script>
+    <script src="./static/js/util.js"></script>
+    <script src="./static/js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new ClipboardJS(".copy_address", {});
+
+      clipboard.on("success", function (e) {
+        $.toptip("链接复制成功", "success");
+      });
+
+      clipboard.on("error", function (e) {
+        $.toptip("链接复制失败", 2000, "success");
+      });
+    </script>
+  </body>
+</html>

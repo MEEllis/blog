@@ -1,0 +1,22 @@
+@import "./mixins/mixins.scss";
+
+@include b(button) {
+  display: inline-block;
+  line-height: 1;
+  padding: 12px 20px;
+  border: 1px solid;
+  & + & {
+    margin-left: 10px;
+  }
+
+  @include m(default) {
+    color: #606266;
+    background-color: #fff;
+    border-color: #dcdfe6;
+  }
+  @include m(primary) {
+    color: #fff;
+    background-color: #409eff;
+    border-color: #409eff;
+  }
+}

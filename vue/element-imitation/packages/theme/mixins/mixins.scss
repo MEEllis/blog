@@ -1,0 +1,17 @@
+@import "./config.scss";
+@mixin b($block) {
+  $B: $namespace + "-" + $block;
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: $selector + $modifier-separator + $modifier;
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
