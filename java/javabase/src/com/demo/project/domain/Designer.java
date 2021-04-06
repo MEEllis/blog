@@ -1,17 +1,16 @@
 package com.demo.project.domain;
 
-import com.demo.project.service.Status;
 
 //产品经理
 public class Designer extends Programmer {
-    private double bonus; //奖金
+    protected double bonus; //奖金
 
     public Designer() {
         super();
     }
 
-    public Designer(int id, String name, int age, double salary, int memberid, Status status, Equipment equipment, double bonus) {
-        super(id, name, age, salary, memberid, status, equipment);
+    public Designer(int id, String name, int age, double salary, Equipment equipment, double bonus) {
+        super(id, name, age, salary, equipment);
         this.bonus = bonus;
     }
 
@@ -22,4 +21,15 @@ public class Designer extends Programmer {
     public void setBonus(double bonus) {
         this.bonus = bonus;
     }
+
+    @Override
+    public String toString() {
+        return this.getDetail() + "产品经理\t" + status + "\t" + bonus + "\t\t" + equipment.getDescription();
+    }
+
+    @Override
+    public String getDetailForTeam() {
+        return  this.getTeanBase() +"产品经理\t" +getBonus() ;
+    }
+
 }

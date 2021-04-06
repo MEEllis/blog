@@ -17,4 +17,9 @@ public class Status {
     public String getNAME() {
         return this.NAME;
     }
+
+    @Override
+    public String toString() {
+        return NAME;
+    }
 }

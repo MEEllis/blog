@@ -4,28 +4,29 @@ import com.demo.project.service.Status;
 
 //程序员
 public class Programmer extends Employee {
-    private int memberid;
-    private Status status;
-    private Equipment equipment;
+    protected Status status = Status.FREE;
+    protected Equipment equipment;
+
+
+
+    protected int memberId;
 
 
     public Programmer() {
         super();
     }
 
-    public Programmer(int id, String name, int age, double salary, int memberid, Status status, Equipment equipment) {
+    public Programmer(int id, String name, int age, double salary, Equipment equipment) {
         super(id, name, age, salary);
-        this.memberid = memberid;
-        this.status = status;
         this.equipment = equipment;
     }
 
-    public int getMemberid() {
-        return memberid;
+    public int getMemberId() {
+        return memberId;
     }
 
-    public void setMemberid(int memberid) {
-        this.memberid = memberid;
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
     }
 
     public Status getStatus() {
@@ -42,5 +43,18 @@ public class Programmer extends Employee {
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    public  String getTeanBase(){
+       return getMemberId()+"/" +getId()+ "\t" +getName() + "\t" + getAge() + "\t" + getSalary()+ "\t";
+    }
+
+    @Override
+    public String toString() {
+        return this.getDetail() +"程序员\t"+ status +"\t\t\t" + equipment.getDescription();
+    }
+
+    public String getDetailForTeam() {
+        return this.getTeanBase()+"程序员\t" ;
     }
 }
