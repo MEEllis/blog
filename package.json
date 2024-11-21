@@ -2,7 +2,7 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "engines": {
-    "pnpm": "^10.9.0"
+    "pnpm": "10.9.0"
   },
   "devDependencies": {
     "vitepress": "^1.5.0"
