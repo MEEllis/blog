@@ -1,0 +1,21 @@
+server:
+  port: 6061
+spring:
+  application:
+    name:helloworld
+  devtools:
+      restart:
+        enabled:true
+  datasource:
+    url: jdbc:mysql://localhost:3306/test01?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123123qe
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql:true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
